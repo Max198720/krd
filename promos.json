@@ -1,0 +1,64 @@
+[
+	{
+		"strenght": 1,
+		"money": 1,
+		"promo": "gay",
+		"activations": 1,
+		"users": [
+			1
+		],
+		"post_id": 29
+	},
+	{
+		"strenght": 1000,
+		"money": 1000,
+		"promo": "coder_daun",
+		"activations": 5,
+		"users": [],
+		"post_id": 30
+	},
+	{
+		"strenght": 1000,
+		"money": 1000,
+		"promo": "coder-daun",
+		"activations": 5,
+		"users": [
+			2,
+			5,
+			3,
+			4,
+			12
+		],
+		"post_id": 31
+	},
+	{
+		"strenght": 10000,
+		"money": 2500,
+		"promo": "piska",
+		"activations": 5,
+		"users": [
+			5,
+			1
+		],
+		"post_id": 33
+	},
+	{
+		"strenght": 2500,
+		"money": 2000,
+		"promo": "Admin_Xuilo",
+		"activations": 50,
+		"users": [
+			4,
+			5,
+			3,
+			1,
+			12,
+			9,
+			20,
+			21,
+			11,
+			2
+		],
+		"post_id": 46
+	}
+]

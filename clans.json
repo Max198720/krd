@@ -1,0 +1,160 @@
+[
+	{
+		"cid": 0,
+		"name": "SlayerSquad",
+		"owner": 1,
+		"members": [
+			1,
+			4,
+			3,
+			6,
+			9,
+			21
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": "photo457091324_457251716_ec5c11905708925901",
+		"link": {
+			"key": "cmiewb",
+			"short_url": "https://vk.cc/cmiewb",
+			"url": "https://vk.me/demon_slayerbot?ref=MGNpZA=="
+		},
+		"boss": {
+			"name": "Матвей Жуков",
+			"hp": 9589433,
+			"maxHp": 10000000,
+			"icon": "photo457091324_457251735_e2e842df6c0f8f0182"
+		},
+		"reputation": 55,
+		"delete": false
+	},
+	{
+		"cid": 1,
+		"name": "New Era",
+		"owner": 5,
+		"members": [
+			5,
+			12
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": "photo514528890_457247638_694588165e5caf30ff",
+		"link": {
+			"key": "cnHdg7",
+			"short_url": "https://vk.cc/cnHdg7",
+			"url": "https://vk.me/demon_slayerbot?ref=MWNpZA=="
+		},
+		"boss": {
+			"name": "вупсень",
+			"hp": 9697004,
+			"maxHp": 10000000,
+			"icon": "photo514528890_457247639_95f1b3cdbc20c58915"
+		},
+		"reputation": 16,
+		"delete": false
+	},
+	{
+		"cid": 2,
+		"name": "",
+		"owner": 2,
+		"members": [
+			2
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": null,
+		"link": {
+			"key": "cnHdnL",
+			"short_url": "https://vk.cc/cnHdnL",
+			"url": "https://vk.me/demon_slayerbot?ref=MmNpZA=="
+		},
+		"boss": {
+			"name": null,
+			"hp": null,
+			"maxHp": null,
+			"icon": ""
+		},
+		"reputation": 0,
+		"delete": true
+	},
+	{
+		"cid": 3,
+		"name": "*&^%$@!#",
+		"owner": 2,
+		"members": [
+			2,
+			18,
+			22
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": "photo675195902_457243523_52049e0acbaedce627",
+		"link": {
+			"key": "cnHdsf",
+			"short_url": "https://vk.cc/cnHdsf",
+			"url": "https://vk.me/demon_slayerbot?ref=M2NpZA=="
+		},
+		"boss": {
+			"name": "Лягуха",
+			"hp": 9982697,
+			"maxHp": 10000000,
+			"icon": "photo675195902_457243221_3a903ea56bacf111e6"
+		},
+		"reputation": 7,
+		"delete": false
+	},
+	{
+		"cid": 4,
+		"name": "Райнеры",
+		"owner": 8,
+		"members": [
+			8
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": "photo769208092_457301216_9cd613f680d8a0524f",
+		"link": {
+			"key": "cnHdsC",
+			"short_url": "https://vk.cc/cnHdsC",
+			"url": "https://vk.me/demon_slayerbot?ref=NGNpZA=="
+		},
+		"boss": {
+			"name": null,
+			"hp": null,
+			"maxHp": null,
+			"icon": ""
+		},
+		"reputation": 0,
+		"delete": false
+	},
+	{
+		"cid": 5,
+		"name": "📎ТРАХАТЬ???",
+		"owner": 11,
+		"members": [
+			11
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": "photo548407308_457326516_3ef1af79db7a94b23c",
+		"link": {
+			"key": "cnMHMd",
+			"short_url": "https://vk.cc/cnMHMd",
+			"url": "https://vk.me/demon_slayerbot?ref=NWNpZA=="
+		},
+		"boss": {
+			"name": "📎🖤Гуленыш🖤📎",
+			"hp": 9982004,
+			"maxHp": 10000000,
+			"icon": "photo548407308_457325908_456c55d38d4c4bea59"
+		},
+		"reputation": 5,
+		"delete": false
+	}
+]

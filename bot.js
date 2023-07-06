@@ -1,5 +1,5 @@
 const { VK, Keyboard } = require('vk-io');
-const userToken = `vk1.a.v6jk5u2VMRTfWLedNlwBC6BTsIPJu5yUT_dSr6BIFY97dp8biTyWVtNi9B8YLZ4H0pr2B7sBD573P6EvV4EjVf_4X8kICVsYW8QZ_fm9T-pmBRmxqz_wobzBLSohSIlNjjFg-yL6zak1lD3GlwkW2gbs9EsfBTnZ02-XmJ2iI5lU9YXMT5VptWUIXvgWupMocKJPBT-Z-rjuQuXz_8kaXw`;
+const userToken = `vk1.a.XnKwuFbUXxQg0QQRPYr_VG8OuqdPGcvwECDm8oCN4l_tstx5WUTor_hBwOzln-kS-zm9tgtR4jTF2cu28K9WY5zDFR65lT1Bhmic6fTj8Xniz59cRiAVn72YXujaGFOr8jQoueqtYSUWEvOlRhHVgPsvvu2qOKx9GMdcfBOEP3pwwRmapvLVttA5xb6kWoDXHdfk6LTr1BIsbCjJITUd4g`;
 const botToken = `vk1.a.9hRTJcxZ4Lq7mdp0_Hd6qsxwg1iIJ8LQHrITStCB991224330cJnKjA26fM4VTbMWqpdG69YI9-tkWIUjj8mXaiUAbdmaEM53RvxBsGUF4uuJAg40I3iKq3kQZEiKCntY-Res1xGtqopIub9v-DnCAhKK1qw18n76zKVWC0G8_KzsHny-KynPvlbJGfv772b1yh1-jVxpUhUZBhfnmQrKQ`;
 const vk = new VK({
     token: botToken,

@@ -2052,16 +2052,6 @@ cmd.hear(/^(?:треша|тренировка|Тренировка💪)$/i, asyn
     })
 })
 
-cmd.hear(/^(?:update)$/i, async (msg, bot) => {
-    if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.user.id !== 675195902 && !msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`)
-    else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.user.id !== 675195902 && msg.isChat) return;
-
-    for(i in users) {
-        users[i].weapon = null
-    }
-    await bot(`Успешно!`)
-})
-
 cmd.hear(/^(?:тест)$/i, async (msg, bot) => {
     let a = [
         {

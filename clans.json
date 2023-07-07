@@ -6,10 +6,11 @@
 		"members": [
 			1,
 			4,
-			3,
 			6,
 			9,
-			21
+			21,
+			24,
+			24
 		],
 		"description": null,
 		"hello": null,
@@ -22,11 +23,11 @@
 		},
 		"boss": {
 			"name": "Матвей Жуков",
-			"hp": 9589433,
+			"hp": 8394875,
 			"maxHp": 10000000,
 			"icon": "photo457091324_457251735_e2e842df6c0f8f0182"
 		},
-		"reputation": 55,
+		"reputation": 105,
 		"delete": false
 	},
 	{
@@ -48,11 +49,11 @@
 		},
 		"boss": {
 			"name": "вупсень",
-			"hp": 9697004,
+			"hp": 9048183,
 			"maxHp": 10000000,
 			"icon": "photo514528890_457247639_95f1b3cdbc20c58915"
 		},
-		"reputation": 16,
+		"reputation": 35,
 		"delete": false
 	},
 	{
@@ -100,11 +101,11 @@
 		},
 		"boss": {
 			"name": "Лягуха",
-			"hp": 9982697,
+			"hp": 19434927,
 			"maxHp": 10000000,
 			"icon": "photo675195902_457243221_3a903ea56bacf111e6"
 		},
-		"reputation": 7,
+		"reputation": 49,
 		"delete": false
 	},
 	{
@@ -150,11 +151,87 @@
 		},
 		"boss": {
 			"name": "📎🖤Гуленыш🖤📎",
-			"hp": 9982004,
+			"hp": 9881843,
 			"maxHp": 10000000,
 			"icon": "photo548407308_457325908_456c55d38d4c4bea59"
 		},
-		"reputation": 5,
+		"reputation": 16,
+		"delete": false
+	},
+	{
+		"cid": 6,
+		"name": "📎revoke alone📎",
+		"owner": 28,
+		"members": [
+			28,
+			20
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": "photo548407308_457327011_f796b3d81165457788",
+		"link": {
+			"key": "cnMIre",
+			"short_url": "https://vk.cc/cnMIre",
+			"url": "https://vk.me/demon_slayerbot?ref=NmNpZA=="
+		},
+		"boss": {
+			"name": "📎Шут📎",
+			"hp": 10075906,
+			"maxHp": 10000000,
+			"icon": "photo548407308_457325908_c1a17bb1e4f6691367"
+		},
+		"reputation": 11,
+		"delete": false
+	},
+	{
+		"cid": 7,
+		"name": "BigPencil",
+		"owner": 19,
+		"members": [
+			19
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": "photo662297889_457244120_e6b63128c3c49851a0",
+		"link": {
+			"key": "cnMItD",
+			"short_url": "https://vk.cc/cnMItD",
+			"url": "https://vk.me/demon_slayerbot?ref=N2NpZA=="
+		},
+		"boss": {
+			"name": "Пенсил",
+			"hp": 10991971,
+			"maxHp": 11000000,
+			"icon": "photo662297889_457244120_e6b63128c3c49851a0"
+		},
+		"reputation": 1,
+		"delete": false
+	},
+	{
+		"cid": 8,
+		"name": "БигНеймы",
+		"owner": 3,
+		"members": [
+			3
+		],
+		"description": null,
+		"hello": null,
+		"chat": "",
+		"icon": null,
+		"link": {
+			"key": "cpbisi",
+			"short_url": "https://vk.cc/cpbisi",
+			"url": "https://vk.me/demon_slayerbot?ref=OGNpZA=="
+		},
+		"boss": {
+			"name": null,
+			"hp": null,
+			"maxHp": null,
+			"icon": ""
+		},
+		"reputation": 0,
 		"delete": false
 	}
 ]

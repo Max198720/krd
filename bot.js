@@ -1,9 +1,9 @@
 const { VK, Keyboard } = require('vk-io');
-const userToken = `vk1.a.XnKwuFbUXxQg0QQRPYr_VG8OuqdPGcvwECDm8oCN4l_tstx5WUTor_hBwOzln-kS-zm9tgtR4jTF2cu28K9WY5zDFR65lT1Bhmic6fTj8Xniz59cRiAVn72YXujaGFOr8jQoueqtYSUWEvOlRhHVgPsvvu2qOKx9GMdcfBOEP3pwwRmapvLVttA5xb6kWoDXHdfk6LTr1BIsbCjJITUd4g`;
-const botToken = `vk1.a.9hRTJcxZ4Lq7mdp0_Hd6qsxwg1iIJ8LQHrITStCB991224330cJnKjA26fM4VTbMWqpdG69YI9-tkWIUjj8mXaiUAbdmaEM53RvxBsGUF4uuJAg40I3iKq3kQZEiKCntY-Res1xGtqopIub9v-DnCAhKK1qw18n76zKVWC0G8_KzsHny-KynPvlbJGfv772b1yh1-jVxpUhUZBhfnmQrKQ`;
+const userToken = `vk1.a.IgfwEgOxsJNUU-FBKdJhVttyPXRUV8VKwFkCr0wmhUc865oX9Mg5DhtFmeLGa9NY4r03w2Cfw5E87tpYsG12qzrmbexqTnQuBIv3NEUNmW37pDjrZSuP92Hwt9koznSSS72OxEd67ka1i7YZWKjRwVztMEpochDhViH5Op8JKEDm511G9N6c8oAmWavLEJjBoWGhQU_gNAn2ueJiCKig9Q`;
+const botToken = `vk1.a.63KdXKGpYvuLEAX7ZJEdPhNVSupgKyoizFM-CTC02-aa0kXttZ4gOJlyjtltdZXYJRr9tmb_YwOEPLIBh6MaOSq-mc67wU_cJs5PLLk36A0sQ4-hZDleQE-wvJY5fnDOdJrAeCCnqWeiK8hTvhVzRzcFeG0xgzZoolcuUiTz6y6hqmckS5LoCFz1A7Qnb3MuG-I6AwPtXHwCSe0n_xC_JQ`;
 const vk = new VK({
     token: botToken,
-    pollingGroupId: 214188938
+    pollingGroupId: 218252023
 });
 const commands = [];
 let usera = new VK({
@@ -213,7 +213,7 @@ updates.on('message', async (msg) => {
         refValue = null
     }
     
-    if(/\[public214188938\|(.*)\]/i.test(msg.text)) msg.text = msg.text.replace(/\[public214188938\|(.*)\]/ig, '').trim();
+    if(/\[club218252023\|(.*)\]/i.test(msg.text)) msg.text = msg.text.replace(/\[club218252023\|(.*)\]/ig, '').trim();
     if(!users.find(x => x.id === msg.senderId))
     {
         const [user_info] = await vk.api.users.get({ user_id: msg.senderId });
@@ -221,6 +221,7 @@ updates.on('message', async (msg) => {
         users.push({
             uid: users.length,
             id: msg.senderId,
+            weapon: null,
             teacher: null,
             nickname: `${user_info.first_name} ${user_info.last_name}`,
             money: 0,
@@ -242,7 +243,9 @@ updates.on('message', async (msg) => {
             },
             boss_damage: 0,
             clan: null,
-            adm: false
+            adm: false,
+            weapon: null,
+            vip: false
         });
         if(!msg.isChat) {
             return bot(`Поздравляем, вы зарегистрировались в боте!✅
@@ -861,19 +864,99 @@ updates.on('message_event', async (context, bot) => {
         if(context.eventPayload.teacher === context.user.needCall)
         {
             let random_strenght = utils.random(1, 50)
-            context.user.strenght += random_strenght
-            context.user.exp += 1
+            if(context.user.vip === false) {
+                context.user.strenght += random_strenght
+                context.user.exp += 1
+            }
+            else if(context.user.vip === 'Действует') {
+                context.user.strenght += (random_strenght + 25)
+                context.user.exp += 2
+            }
+            
             if(context.user.exp >= context.user.nextExp) {
                 context.user.lvl += 1;
                 context.user.exp = 0
                 context.user.nextExp += 50
             }
-            if(context.eventPayload.isChat) {
+            if(context.user.vip === false) {
+                if(context.eventPayload.isChat) {
+                    return vk.api.messages.edit({
+                        "attachment": attachments.find(x => x.teacher === `${context.eventPayload.teacher}`)['attachment'],
+                        "peer_id": context.peerId,
+                        "conversation_message_id": messageId['items'][0].conversation_message_id,
+                        "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght} очков владения клинком⚔.\nПродолжайте в том же духе!✅\nОжидание за тренировки в беседе увеличено до 1 минуты!`,
+                        "keyboard": Keyboard.keyboard([
+                            [
+                                Keyboard.textButton({
+                                    label: `Тренировка💪`,
+                                    color: Keyboard.NEGATIVE_COLOR
+                                })
+                            ]
+                        ]).inline()
+                    });
+                }
+            }
+            else if(context.user.vip === 'Действует') {
+                if(context.eventPayload.isChat) {
+                    return vk.api.messages.edit({
+                        "attachment": attachments.find(x => x.teacher === `${context.eventPayload.teacher}`)['attachment'],
+                        "peer_id": context.peerId,
+                        "conversation_message_id": messageId['items'][0].conversation_message_id,
+                        "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght}(+25 VIP) очков владения клинком⚔.\nПродолжайте в том же духе!✅\nОжидание за тренировки в беседе увеличено до 1 минуты!`,
+                        "keyboard": Keyboard.keyboard([
+                            [
+                                Keyboard.textButton({
+                                    label: `Тренировка💪`,
+                                    color: Keyboard.NEGATIVE_COLOR
+                                })
+                            ]
+                        ]).inline()
+                    });
+                }
+            }
+            if(context.user.vip === false) {
+                if(context.eventPayload.isChat) {
+                    return vk.api.messages.edit({
+                        "attachment": attachments.find(x => x.teacher === `${context.eventPayload.teacher}`)['attachment'],
+                        "peer_id": context.peerId,
+                        "conversation_message_id": messageId['items'][0].conversation_message_id,
+                        "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght} очков владения клинком⚔.\nПродолжайте в том же духе!✅\nОжидание за тренировки в беседе увеличено до 1 минуты!`,
+                        "keyboard": Keyboard.keyboard([
+                            [
+                                    Keyboard.textButton({
+                                    label: `Тренировка💪`,
+                                    color: Keyboard.NEGATIVE_COLOR
+                                })
+                            ]
+                        ]).inline()
+                    });
+                }
+            }
+            else if(context.user.vip === 'Действует') {
+                if(context.eventPayload.isChat) {
+                    return vk.api.messages.edit({
+                        "attachment": attachments.find(x => x.teacher === `${context.eventPayload.teacher}`)['attachment'],
+                        "peer_id": context.peerId,
+                        "conversation_message_id": messageId['items'][0].conversation_message_id,
+                        "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght}(+25 VIP) очков владения клинком⚔.\nПродолжайте в том же духе!✅\nОжидание за тренировки в беседе увеличено до 1 минуты!`,
+                        "keyboard": Keyboard.keyboard([
+                            [
+                                    Keyboard.textButton({
+                                    label: `Тренировка💪`,
+                                    color: Keyboard.NEGATIVE_COLOR
+                                })
+                            ]
+                        ]).inline()
+                    });
+                }
+            }
+            
+            if(context.user.vip === false) {
                 return vk.api.messages.edit({
                     "attachment": attachments.find(x => x.teacher === `${context.eventPayload.teacher}`)['attachment'],
                     "peer_id": context.peerId,
                     "conversation_message_id": messageId['items'][0].conversation_message_id,
-                    "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght} очков владения клинком⚔.\nПродолжайте в том же духе!✅\nОжидание за тренировки в беседе увеличено до 1 минуты!`,
+                    "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght} очков владения клинком⚔.\nПродолжайте в том же духе!✅`,
                     "keyboard": Keyboard.keyboard([
                         [
                             Keyboard.textButton({
@@ -884,21 +967,23 @@ updates.on('message_event', async (context, bot) => {
                     ]).inline()
                 });
             }
-
-            return vk.api.messages.edit({
-                "attachment": attachments.find(x => x.teacher === `${context.eventPayload.teacher}`)['attachment'],
-                "peer_id": context.peerId,
-                "conversation_message_id": messageId['items'][0].conversation_message_id,
-                "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght} очков владения клинком⚔.\nПродолжайте в том же духе!✅`,
-                "keyboard": Keyboard.keyboard([
-                    [
-                        Keyboard.textButton({
-                            label: `Тренировка💪`,
-                            color: Keyboard.NEGATIVE_COLOR
-                        })
-                    ]
-                ]).inline()
-            });
+            else if(context.user.vip === 'Действует') {
+                return vk.api.messages.edit({
+                    "attachment": attachments.find(x => x.teacher === `${context.eventPayload.teacher}`)['attachment'],
+                    "peer_id": context.peerId,
+                    "conversation_message_id": messageId['items'][0].conversation_message_id,
+                    "message": `Вы успешно прошли тренировку!🔥\nВы получили:\n\n•${random_strenght}(+25 VIP) очков владения клинком⚔.\nПродолжайте в том же духе!✅`,
+                    "keyboard": Keyboard.keyboard([
+                        [
+                            Keyboard.textButton({
+                                label: `Тренировка💪`,
+                                color: Keyboard.NEGATIVE_COLOR
+                            })
+                        ]
+                    ]).inline()
+                });
+            }
+            
         }
         else {
             let random_strenght = utils.random(0, 5)
@@ -1526,14 +1611,11 @@ updates.on('message_event', async (context, bot) => {
         }
         const nextPage = context.eventPayload.page += 1
         const item = shop.find(x => x.page === nextPage)
-        let bool;
-        if(item.name === context.user.weapon) bool = true;
-        else if(item.name !== context.user.weapon) bool = false;
         if(nextPage === getMaxOfArray(pages)) {
             vk.api.messages.edit({
                 "peer_id": context.peerId,
                 "conversation_message_id": messageId['items'][0].conversation_message_id,
-                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥`,
+                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥\nбонус: ${item.bonus * 100}%`,
                 "keyboard": Keyboard.keyboard([
                     [
                         Keyboard.callbackButton({
@@ -1545,13 +1627,13 @@ updates.on('message_event', async (context, bot) => {
                             color: Keyboard.PRIMARY_COLOR
                         }),
                         Keyboard.callbackButton({
-                            label: checkBtnShop(bool).text,
+                            label: "Купить",
                             payload: {
                                 command: "buyNichirin",
                                 item: item,
                                 user: context.userId
                             },
-                            color: checkBtnShop(bool).color
+                            color: Keyboard.POSITIVE_COLOR
                         })
                     ]
                 ]).inline(),
@@ -1561,7 +1643,7 @@ updates.on('message_event', async (context, bot) => {
             vk.api.messages.edit({
                 "peer_id": context.peerId,
                 "conversation_message_id": messageId['items'][0].conversation_message_id,
-                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥`,
+                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥\nбонус: ${item.bonus * 100}%`,
                 "keyboard": Keyboard.keyboard([
                     [
                         Keyboard.callbackButton({
@@ -1573,13 +1655,13 @@ updates.on('message_event', async (context, bot) => {
                             color: Keyboard.PRIMARY_COLOR
                         }),
                         Keyboard.callbackButton({
-                            label: checkBtnShop(bool).text,
+                            label: "Купить",
                             payload: {
                                 command: "buyNichirin",
                                 item: item,
                                 user: context.userId
                             },
-                            color: checkBtnShop(bool).color
+                            color: Keyboard.POSITIVE_COLOR
                         }),
                         Keyboard.callbackButton({
                             label: "&#10145;",
@@ -1602,24 +1684,21 @@ updates.on('message_event', async (context, bot) => {
         }
         const previousPage = context.eventPayload.page -= 1
         const item = shop.find(x => x.page === previousPage)
-        let bool;
-        if(item.name === context.user.weapon) bool = true;
-        else if(item.name !== context.user.weapon) bool = false;
         if(previousPage === getMinOfArray(pages)) {
             vk.api.messages.edit({
                 "peer_id": context.peerId,
                 "conversation_message_id": messageId['items'][0].conversation_message_id,
-                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥`,
+                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥\nбонус: ${item.bonus * 100}%`,
                 "keyboard": Keyboard.keyboard([
                     [
                         Keyboard.callbackButton({
-                            label: checkBtnShop(bool).text,
+                            label: "Купить",
                             payload: {
                                 command: "buyNichirin",
                                 item: item,
                                 user: context.userId
                             },
-                            color: checkBtnShop(bool).color
+                            color: Keyboard.POSITIVE_COLOR
                         }),
                         Keyboard.callbackButton({
                             label: "&#10145;",
@@ -1637,7 +1716,7 @@ updates.on('message_event', async (context, bot) => {
             vk.api.messages.edit({
                 "peer_id": context.peerId,
                 "conversation_message_id": messageId['items'][0].conversation_message_id,
-                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥`,
+                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥\nбонус: ${item.bonus * 100}%`,
                 "keyboard": Keyboard.keyboard([
                     [
                         Keyboard.callbackButton({
@@ -1649,13 +1728,13 @@ updates.on('message_event', async (context, bot) => {
                             color: Keyboard.PRIMARY_COLOR
                         }),
                         Keyboard.callbackButton({
-                            label: checkBtnShop(bool).text,
+                            label: "Купить",
                             payload: {
                                 command: "buyNichirin",
                                 item: item,
                                 user: context.userId
                             },
-                            color: checkBtnShop(bool).color
+                            color: Keyboard.POSITIVE_COLOR
                         }),
                         Keyboard.callbackButton({
                             label: "&#10145;",
@@ -1739,24 +1818,21 @@ updates.on('message_event', async (context, bot) => {
             pages.push(shop[i].page)
         }
         const item = context.eventPayload.item
-        let bool;
-        if(item.name === context.user.weapon) bool = true;
-        else if(item.name !== context.user.weapon) bool = false;
         if(item.page === getMinOfArray(pages)) {
             vk.api.messages.edit({
                 "peer_id": context.peerId,
                 "conversation_message_id": messageId['items'][0].conversation_message_id,
-                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥`,
+                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥\nбонус: ${item.bonus * 100}%`,
                 "keyboard": Keyboard.keyboard([
                     [
                         Keyboard.callbackButton({
-                            label: checkBtnShop(bool).text,
+                            label: "Купить",
                             payload: {
                                 command: "buyNichirin",
                                 item: item,
                                 user: context.userId
                             },
-                            color: checkBtnShop(bool).color
+                            color: Keyboard.POSITIVE_COLOR
                         }),
                         Keyboard.callbackButton({
                             label: "&#10145;",
@@ -1774,7 +1850,7 @@ updates.on('message_event', async (context, bot) => {
             vk.api.messages.edit({
                 "peer_id": context.peerId,
                 "conversation_message_id": messageId['items'][0].conversation_message_id,
-                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥`,
+                "message": `${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥\nбонус: ${item.bonus * 100}%`,
                 "keyboard": Keyboard.keyboard([
                     [
                         Keyboard.callbackButton({
@@ -1786,13 +1862,13 @@ updates.on('message_event', async (context, bot) => {
                             color: Keyboard.PRIMARY_COLOR
                         }),
                         Keyboard.callbackButton({
-                            label: checkBtnShop(bool).text,
+                            label: "Купить",
                             payload: {
                                 command: "buyNichirin",
                                 item: item,
                                 user: context.userId
                             },
-                            color: checkBtnShop(bool).text
+                            color: Keyboard.POSITIVE_COLOR
                         })
                     ]
                 ]).inline(),
@@ -1804,12 +1880,8 @@ updates.on('message_event', async (context, bot) => {
         if(context.userId !== context.eventPayload.user) return;
         const item = context.eventPayload.item
         context.user.weapon = item.name
-        if(item.name === 'Клинок охотника') {
-            let item_secondName = item.name.toLowerCase()
-        } else {
-            let item_secondName = item.name.match(/(?<=\()(.*)(?=\))/ig)
-            item_secondName = item_secondName[0].toLowerCase()
-        }
+        let item_secondName = item.name.match(/(?<=\()(.*)(?=\))/ig)
+        item_secondName = item_secondName[0].toLowerCase()
         context.user.money -= item.cost
         vk.api.messages.edit({
             "peer_id": context.peerId,
@@ -1839,6 +1911,7 @@ cmd.hear(/^(?:инфо)$/i, async (msg, bot) => {
     let text = `Ваш UID: ${utils.sp(msg.user.uid)}\nВаш ник: ${msg.user.nickname}\nВаш наставник: ${msg.user.teacher}\nБаланс: ${utils.sp(msg.user.money)}\nВладение: ${utils.sp(msg.user.strenght)}\nExp: ${utils.sp(msg.user.exp)}|${utils.sp(msg.user.nextExp)}\nУровень: ${utils.sp(msg.user.lvl)}`
     if(msg.user.clan !== null) text += `\nКлан: ${clan.name}`
     if(msg.user.weapon !== null) text += `\nКлинок: ${msg.user.weapon}`
+    if(msg.user.vip !== false) text += `\nВип статус: Активирован`
     return bot(text);
 });
 
@@ -1847,10 +1920,18 @@ cmd.hear(/^(?:бонус)$/i, async (msg, bot) => {
 
     getUnix() + 86400000
 
-    let bonus_money = utils.random(1000, 10000)
-    msg.user.money += bonus_money;
-    msg.user.timers.bonus = getUnix() + 86400000;
-    return bot(`Вы получили ${utils.sp(bonus_money)}¥. До следующего бонуса - 24 часа.`);
+    if(msg.user.vip === false) {
+        let bonus_money = utils.random(1000, 10000)
+        msg.user.money += bonus_money;
+        msg.user.timers.bonus = getUnix() + 86400000;
+        return bot(`Вы получили ${utils.sp(bonus_money)}¥. До следующего бонуса - 24 часа.`);
+    }
+    else if(msg.user.vip === 'Действует') {
+        let bonus_money = utils.random(5000, 50000)
+        msg.user.money += bonus_money;
+        msg.user.timers.bonus = getUnix() + 86400000;
+        return bot(`Вы получили ${utils.sp(bonus_money)}¥. До следующего бонуса - 24 часа.`);
+    }
 });
 
 cmd.hear(/^(?:треша|тренировка|Тренировка💪)$/i, async (msg, bot) => {
@@ -1972,8 +2053,8 @@ cmd.hear(/^(?:треша|тренировка|Тренировка💪)$/i, asyn
 })
 
 cmd.hear(/^(?:update)$/i, async (msg, bot) => {
-    if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && !msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`)
-    else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.isChat) return;
+    if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.user.id !== 675195902 && !msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`)
+    else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.user.id !== 675195902 && msg.isChat) return;
 
     for(i in users) {
         users[i].weapon = null
@@ -2057,7 +2138,7 @@ cmd.hear(/^(?:тест)$/i, async (msg, bot) => {
 });
 
 cmd.hear(/^(?:\+владение|\+str)\s([0-9А-Я]+)\s(.*)$/i, async (msg, bot) => {
-    if(!msg.user.adm && !msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`);
+    if(!msg.user.adm && msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`);
     else if(!msg.user.adm && msg.isChat) return;
     let user = msg.args[2]
     msg.args[1] = utils.repl(msg.args[1])
@@ -2340,7 +2421,7 @@ cmd.hear(/^(?:разбан|unban)\s([0-9]+)$/i, async (msg, bot) => {
 })
 
 cmd.hear(/^(?:setadm|\+adm)\s([0-9]+)$/i, async (msg, bot) => {
-    if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && !msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`)
+    if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.user.id !== 675195902 && !msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`)
     else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.isChat) return;
 
     let user = users.find(x => x.uid === Number(msg.args[1]))
@@ -2353,8 +2434,8 @@ cmd.hear(/^(?:setadm|\+adm)\s([0-9]+)$/i, async (msg, bot) => {
 })
 
 cmd.hear(/^(?:unadm|-adm)\s([0-9]+)$/i, async (msg, bot) => {
-    if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && !msg.isChat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`);
-    else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.isChat) return;
+    if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.user.id !== 675195902) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`);
+    else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.user.id !== 675195902) return;
 
     let user = users.find(x => x.uid === Number(msg.args[1]))
     if(!user) return bot(`Данный игрок не найден!`)
@@ -2371,11 +2452,20 @@ cmd.hear(/^(?:босс|Атака босса)$/i, async (msg, bot) => {
     if(msg.user.timers.boss > getUnix()) return bot(`Для следующей атаки подождите ${unixStampLeft(msg.user.timers.boss - Date.now())}`
     )
 
-    getUnix() + 1800000
+    if(msg.user.vip === false) {
+        getUnix() + 1800000
+    }
+    else if(msg.user.vip === 'Действует') {
+        getUnix() + 1200000
+    }
 
-    msg.user.boss_damage += msg.user.strenght;
     let damage;
-
+    if(msg.user.vip === false) {
+        msg.user.boss_damage += msg.user.strenght;
+    }
+    else if(msg.user.vip === 'Действует') {
+        msg.user.boss_damage += msg.user.strenght * 2
+    }
     if(msg.user.strenght > boss[0].hp) {
         damage = boss[0].hp
     }
@@ -2383,14 +2473,27 @@ cmd.hear(/^(?:босс|Атака босса)$/i, async (msg, bot) => {
         damage = msg.user.strenght
     }
 
-    if(msg.user.weapon !== null) damage += damage * item.bonus
+    if(msg.user.vip === false) {
+        if(msg.user.weapon !== null) damage += damage * item.bonus
+    }
+    else if(msg.user.vip === 'Действует') {
+        damage += damage
+        if(msg.user.weapon !== null) damage += damage * item.bonus
+    }
+    
 
     boss[0].hp -= Math.round(damage);
 
     money = damage
     msg.user.money += Math.round(money)
 
-    bot(`Вы нанесли боссу ${Math.round(damage)} урона и получили ${utils.sp(Math.round(money))}¥. До следующей атаки босса - 30 минут.`);
+    if(msg.user.vip === false) {
+        bot(`Вы нанесли боссу ${Math.round(damage)} урона и получили ${utils.sp(Math.round(money))}¥. До следующей атаки босса - 30 минут.`);
+    }
+
+    else if(msg.user.vip === 'Действует') {
+        bot(`Вы нанесли боссу ${Math.round(damage)} урона и получили ${utils.sp(Math.round(money))}¥. До следующей атаки босса - 20 минут.`);
+    }
 
     if(boss[0].hp <= 0) {
         for(let i = 0; i in users; i++) {
@@ -2758,15 +2861,28 @@ cmd.hear(/^(?:кбосс|кбосс атака)$/i, async (msg, bot) => {
     )
 
     let damage;
+    if(msg.user.vip === false) {
+        damage = msg.user.strenght
+        if(msg.user.weapon !== null) damage += damage * item.bonus
+    
+        clan.boss.hp -= Math.round(damage)
+    
+    
+        msg.user.exp += 5
+        clan.reputation += 1
+    }
 
-    damage = msg.user.strenght
-    if(msg.user.weapon !== null) damage += damage * item.bonus
+    else if(msg.user.vip === 'Действует') {
+        damage = msg.user.strenght * 2
+        if(msg.user.weapon !== null) damage += damage * item.bonus 
+    
+        clan.boss.hp -= Math.round(damage)
+    
+    
+        msg.user.exp += 10
+        clan.reputation += 2
+    }
 
-    clan.boss.hp -= Math.round(damage)
-
-
-    msg.user.exp += 5
-    clan.reputation += 1
     if(msg.user.exp >= msg.user.nextExp) {
         msg.user.lvl += 1;
         msg.user.exp = 0;
@@ -2797,10 +2913,19 @@ cmd.hear(/^(?:кбосс|кбосс атака)$/i, async (msg, bot) => {
 
     if(clan.boss.name === null) return msg.user.timers.cboss = getUnix() + 1800000;
 
-    bot(`Вы успешно атаковали кланового босса ${clan.boss.name} и нанесли ему ${utils.sp(Math.round(damage))} урона. Вы получили 5 опыта. Клан получил 1 репутацию.`, {
-        attachment: clan.boss.icon
-    })
-    return msg.user.timers.cboss = getUnix() + 1800000;
+    if(msg.user.vip === false) {
+        bot(`Вы успешно атаковали кланового босса ${clan.boss.name} и нанесли ему ${utils.sp(Math.round(damage))} урона. Вы получили 5 опыта. Клан получил 1 репутацию.`, {
+            attachment: clan.boss.icon
+        })
+        return msg.user.timers.cboss = getUnix() + 1800000;
+    }
+
+    else if(msg.user.vip === 'Действует') {
+        bot(`Вы успешно атаковали кланового босса ${clan.boss.name} и нанесли ему ${utils.sp(Math.round(damage))} урона. Вы получили 10 опыта. Клан получил 2 репутацию.`, {
+            attachment: clan.boss.icon
+        })
+        return msg.user.timers.cboss = getUnix() + 1200000;
+    }
 
 })
 
@@ -2880,38 +3005,12 @@ cmd.hear(/^(?:топ)$/i, async (msg, bot) => {
     })
 })
 
-const checkBtnShop = (bool) => {
-    let popa = {}
-    if(bool) {
-        popa.color = Keyboard.NEGATIVE_COLOR
-        popa.text = `Куплено`
-    } else {
-        popa.color = Keyboard.POSITIVE_COLOR
-        popa.text = `Купить`
-    }
-    return popa
-}
-
 cmd.hear(/^(?:магаз|магазин)$/i, async (msg, bot) => {
     let page = 1
     let item = shop.find(x => x.page === page)
-    let bool;
-
-    if(item.name === msg.user.weapon) bool = true;
-    else if(item.name !== msg.user.weapon) bool = false;
-
-    return bot(`${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥`, {
+    return bot(`${item.name}\n\nСтоимость: ${utils.sp(item.cost)}¥\nбонус: ${item.bonus * 100}%`, {
         keyboard: Keyboard.keyboard([
             [
-                Keyboard.callbackButton({
-                    label: checkBtnShop(bool).text,
-                    payload: {
-                        command: "buyNichirin",
-                        item: item,
-                        user: msg.senderId
-                    },
-                    color: checkBtnShop(bool).color
-                }),
                 Keyboard.callbackButton({
                     label: "&#10145;",
                     payload: {
@@ -2919,6 +3018,15 @@ cmd.hear(/^(?:магаз|магазин)$/i, async (msg, bot) => {
                         page: page
                     },
                     color: Keyboard.PRIMARY_COLOR
+                }),
+                Keyboard.callbackButton({
+                    label: "Купить",
+                    payload: {
+                        command: "buyNichirin",
+                        item: item,
+                        user: msg.senderId
+                    },
+                    color: Keyboard.POSITIVE_COLOR
                 })
             ]
         ]).inline(),
@@ -2929,3 +3037,29 @@ cmd.hear(/^(?:магаз|магазин)$/i, async (msg, bot) => {
 function getUnix() {
     return Date.now();
 }
+
+cmd.hear(/^(?:setvip|\+vip)\s([0-9]+)$/i, async (msg, bot) => {
+    if(msg.user.id !== 657796581 && msg.user.id !== 675195902 && msg.user.id !== 361263304 && msg.Ischat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`)
+    else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.Ischat) return;
+
+    let user = users.find(x => x.uid === Number(msg.args[1]))
+    if(!user) return bot(`Данный игрок не найден!`)
+
+    user.vip = 'Действует'
+    return bot(`Вы успешно назначили [id${user.id}|${user.nickname}] вип привелегию!`, {
+        disable_mentions: 1
+    })
+})
+
+cmd.hear(/^(?:unvip|-vip)\s([0-9]+)$/i, async (msg, bot) => {
+    if(msg.user.id !== 657796581 && msg.user.id !== 675195902 && msg.user.id !== 361263304 && msg.Ischat) return bot(`Я не знаю такой команды. Чтобы узнать команды, пишите "помощь".`);
+    else if(msg.user.id !== 657796581 && msg.user.id !== 361263304 && msg.Ischat) return;
+
+    let user = users.find(x => x.uid === Number(msg.args[1]))
+    if(!user) return bot(`Данный игрок не найден!`)
+
+    user.vip = false
+    return bot(`Вы успешно сняли [id${user.id}|${user.nickname}] вип привилегию!`, {
+        disable_mentions: 1
+    })
+})

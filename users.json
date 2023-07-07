@@ -24,114 +24,119 @@
 		"boss_damage": 1003,
 		"clan": 7,
 		"adm": true,
+		"vip": false,
 		"weapon": null
 	},
 	{
 		"uid": 1,
 		"id": 457091324,
 		"teacher": "Санеми Шинадзугава",
-		"nickname": "Иван Сосёт мне",
-		"money": 389254,
+		"nickname": "⛩️ピズドリス⛩️",
+		"money": 1451540,
 		"timers": {
-			"bonus": 1688466731740,
-			"training": 1688427338674,
-			"boss": 1688428801832,
-			"cboss": 1688428803554
+			"bonus": 1688719450290,
+			"training": 1688664688826,
+			"boss": 1688665674259,
+			"cboss": 1688665676030
 		},
-		"lvl": 4,
-		"exp": 205,
-		"nextExp": 250,
-		"needCall": "Муичиро Токито",
-		"strenght": 33281,
+		"lvl": 5,
+		"exp": 198,
+		"nextExp": 275,
+		"needCall": "Саконджи Урокодаки",
+		"strenght": 43443,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 342139,
+		"boss_damage": 1631048,
 		"clan": 0,
-		"adm": false,
-		"weapon": null
+		"adm": true,
+		"vip": false,
+		"weapon": "Клинок охотника"
 	},
 	{
 		"uid": 2,
 		"id": 675195902,
 		"teacher": "Мицури Канроджи",
 		"nickname": "OpenDoor21",
-		"money": 25168,
+		"money": 536938,
 		"timers": {
-			"bonus": 1688488572473,
-			"training": 1688425926329,
-			"boss": 1688427578365,
-			"cboss": 1688427577215
+			"bonus": 1688709143746,
+			"training": 1688664320760,
+			"boss": 1688664244297,
+			"cboss": 1688665188622
 		},
-		"lvl": 2,
-		"exp": 144,
-		"nextExp": 150,
-		"needCall": "Саконджи Урокодаки",
-		"strenght": 7650,
+		"lvl": 5,
+		"exp": 106,
+		"nextExp": 250,
+		"needCall": "Обанай Игуро",
+		"strenght": 20202,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 17942,
+		"boss_damage": 485890,
 		"clan": 3,
-		"adm": false,
-		"weapon": null
+		"adm": true,
+		"vip": "Действует",
+		"weapon": "Клинок охотника"
 	},
 	{
 		"uid": 3,
 		"id": 361263304,
 		"teacher": "Шинобу Кочо",
-		"nickname": "VIP чел ака Тополь",
-		"money": 6039466,
+		"nickname": "[[id675195902|лох]]",
+		"money": 5615453,
 		"timers": {
-			"bonus": 1688473104568,
-			"training": 1688421318646,
-			"boss": 1688429152439,
-			"cboss": 1688429607686
+			"bonus": 1688635003602,
+			"training": 1688664625764,
+			"boss": 1688665232335,
+			"cboss": 1688550398603
 		},
-		"lvl": 1,
-		"exp": 85,
-		"nextExp": 100,
-		"needCall": "Мицури Канроджи",
-		"strenght": 4248,
+		"lvl": 4,
+		"exp": 114,
+		"nextExp": 250,
+		"needCall": "Обанай Игуро",
+		"strenght": 21811,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 33160,
-		"clan": 0,
+		"boss_damage": 77140,
+		"clan": 8,
 		"adm": true,
-		"weapon": "Мицури (Клинок любви) 💖"
+		"vip": false,
+		"weapon": "Шинобу (Клинок бабочки) 🦋"
 	},
 	{
 		"uid": 4,
 		"id": 561743896,
 		"teacher": "Муичиро Токито",
 		"nickname": "ドゥーマ",
-		"money": 39969,
+		"money": 153885,
 		"timers": {
-			"bonus": 1688468397148,
-			"training": 1688408871264,
-			"boss": 1688426954311,
-			"cboss": 1688426950850
+			"bonus": 1688713241023,
+			"training": 1688644198686,
+			"boss": 1688653804699,
+			"cboss": 1688653800892
 		},
-		"lvl": 2,
-		"exp": 75,
-		"nextExp": 150,
-		"needCall": "Обанай Игуро",
-		"strenght": 7006,
+		"lvl": 3,
+		"exp": 45,
+		"nextExp": 200,
+		"needCall": "Мицури Канроджи",
+		"strenght": 13594,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 29703,
+		"boss_damage": 127178,
 		"clan": 0,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -139,26 +144,27 @@
 		"id": 514528890,
 		"teacher": "Гию Томиока",
 		"nickname": "Ваня Титов-Не",
-		"money": 336141,
+		"money": 983242,
 		"timers": {
-			"bonus": 1688469302283,
-			"training": 1688418988641,
-			"boss": 1688419651365,
-			"cboss": 1688419650025
+			"bonus": 1688715088790,
+			"training": 1688664341446,
+			"boss": 1688665909429,
+			"cboss": 1688665908292
 		},
-		"lvl": 5,
-		"exp": 219,
-		"nextExp": 300,
-		"needCall": "Обанай Игуро",
-		"strenght": 34895,
+		"lvl": 6,
+		"exp": 153,
+		"nextExp": 350,
+		"needCall": "Тенген Узуй",
+		"strenght": 43954,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 326457,
+		"boss_damage": 945498,
 		"clan": 1,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -166,26 +172,27 @@
 		"id": 728784826,
 		"teacher": "Мицури Канроджи",
 		"nickname": "Kirill Aidov-Rainer",
-		"money": 3153,
+		"money": 22092,
 		"timers": {
 			"bonus": 1688481515973,
-			"training": 1688427266352,
-			"boss": 1688399943476,
-			"cboss": 1688398658772
+			"training": 1688633799573,
+			"boss": 1688666465743,
+			"cboss": 1688666462672
 		},
-		"lvl": 1,
-		"exp": 43,
-		"nextExp": 100,
-		"needCall": "Санеми Шинадзугава",
-		"strenght": 864,
+		"lvl": 2,
+		"exp": 77,
+		"nextExp": 150,
+		"needCall": "Кёджуро Ренгоку",
+		"strenght": 3440,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 1021,
+		"boss_damage": 19960,
 		"clan": 0,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -213,6 +220,7 @@
 		"boss_damage": 316,
 		"clan": null,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -240,6 +248,7 @@
 		"boss_damage": 0,
 		"clan": 4,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -247,26 +256,27 @@
 		"id": 552928805,
 		"teacher": "Муичиро Токито",
 		"nickname": "незуко",
-		"money": 5574,
+		"money": 8461,
 		"timers": {
 			"bonus": 1688486186272,
-			"training": 1688401080926,
-			"boss": 1688401628695,
+			"training": 1688544303353,
+			"boss": 1688546042981,
 			"cboss": 0
 		},
 		"lvl": 1,
-		"exp": 13,
+		"exp": 14,
 		"nextExp": 100,
-		"needCall": "Санеми Шинадзугава",
-		"strenght": 2868,
+		"needCall": "Шинобу Кочо",
+		"strenght": 2885,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 0,
+		"boss_damage": 2887,
 		"clan": 0,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -294,33 +304,7 @@
 		"boss_damage": 0,
 		"clan": null,
 		"adm": false,
-		"weapon": null
-	},
-	{
-		"uid": 11,
-		"id": 548407308,
-		"teacher": "Обанай Игуро",
-		"nickname": "Константин Вернер-Мамонтов",
-		"money": 40884,
-		"timers": {
-			"bonus": 1688486576727,
-			"training": 1688425346028,
-			"boss": 1688428696848,
-			"cboss": 1688428114898
-		},
-		"lvl": 1,
-		"exp": 87,
-		"nextExp": 100,
-		"needCall": "Гёмей Химеджима",
-		"strenght": 9051,
-		"ban_info": {
-			"ban": false,
-			"reason": "",
-			"adm": null
-		},
-		"boss_damage": 34337,
-		"clan": 5,
-		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -328,53 +312,55 @@
 		"id": 672245900,
 		"teacher": "Гию Томиока",
 		"nickname": "Влад Солевой",
-		"money": 64881,
+		"money": 106869,
 		"timers": {
-			"bonus": 1688487066414,
-			"training": 1688405938802,
-			"boss": 1688420723408,
-			"cboss": 1688420723407
+			"bonus": 1688726408356,
+			"training": 1688640647369,
+			"boss": 1688648441084,
+			"cboss": 1688648440380
 		},
 		"lvl": 3,
-		"exp": 27,
+		"exp": 73,
 		"nextExp": 200,
-		"needCall": "Обанай Игуро",
-		"strenght": 9534,
+		"needCall": "Мицури Канроджи",
+		"strenght": 10208,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 55021,
+		"boss_damage": 84801,
 		"clan": 1,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
 		"uid": 13,
 		"id": 297253873,
 		"teacher": "Мицури Канроджи",
-		"nickname": "Матвей Жуков",
-		"money": 0,
+		"nickname": "ку сучки",
+		"money": 560052,
 		"timers": {
-			"bonus": 0,
-			"training": 0,
-			"boss": 0,
+			"bonus": 1688713735310,
+			"training": 1688562434217,
+			"boss": 1688629152236,
 			"cboss": 0
 		},
-		"lvl": 1,
-		"exp": 0,
+		"lvl": 2,
+		"exp": 3,
 		"nextExp": 100,
-		"needCall": null,
-		"strenght": 0,
+		"needCall": "Гёмей Химеджима",
+		"strenght": 119,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 0,
+		"boss_damage": 283,
 		"clan": null,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -402,33 +388,35 @@
 		"boss_damage": 369,
 		"clan": null,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
 		"uid": 15,
 		"id": 608728699,
 		"teacher": "Гёмей Химеджима",
-		"nickname": "Нурбек Армеец",
-		"money": 0,
+		"nickname": "довгаль лох",
+		"money": 23055,
 		"timers": {
-			"bonus": 0,
-			"training": 1688407372093,
-			"boss": 0,
+			"bonus": 1688655184465,
+			"training": 1688653915237,
+			"boss": 1688570642228,
 			"cboss": 0
 		},
 		"lvl": 1,
-		"exp": 0,
+		"exp": 3,
 		"nextExp": 100,
-		"needCall": null,
-		"strenght": 0,
+		"needCall": "Гию Томиока",
+		"strenght": 5103,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 0,
+		"boss_damage": 40,
 		"clan": null,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -456,6 +444,7 @@
 		"boss_damage": 0,
 		"clan": null,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -483,6 +472,7 @@
 		"boss_damage": 0,
 		"clan": null,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -490,26 +480,27 @@
 		"id": 576735743,
 		"teacher": "Мицури Канроджи",
 		"nickname": "Мария Горягина-Бабушкина",
-		"money": 0,
+		"money": 2809,
 		"timers": {
 			"bonus": 0,
-			"training": 1688406641689,
-			"boss": 0,
-			"cboss": 0
+			"training": 1688664763172,
+			"boss": 1688664765783,
+			"cboss": 1688664858628
 		},
-		"lvl": 1,
-		"exp": 1,
-		"nextExp": 100,
-		"needCall": "Шинобу Кочо",
-		"strenght": 12,
+		"lvl": 2,
+		"exp": 23,
+		"nextExp": 150,
+		"needCall": "Гию Томиока",
+		"strenght": 2879,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 0,
+		"boss_damage": 2809,
 		"clan": 3,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -517,26 +508,27 @@
 		"id": 662297889,
 		"teacher": "Кёджуро Ренгоку",
 		"nickname": "Просто Ден",
-		"money": 6578,
+		"money": 37632,
 		"timers": {
-			"bonus": 1688495632920,
-			"training": 1688409664716,
+			"bonus": 1688735443792,
+			"training": 1688492308333,
 			"boss": 1688411104255,
-			"cboss": 0
+			"cboss": 1688651722247
 		},
 		"lvl": 1,
-		"exp": 3,
+		"exp": 26,
 		"nextExp": 100,
-		"needCall": "Санеми Шинадзугава",
-		"strenght": 82,
+		"needCall": "Обанай Игуро",
+		"strenght": 8029,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
 		"boss_damage": 0,
-		"clan": null,
+		"clan": 7,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -544,26 +536,27 @@
 		"id": 549695307,
 		"teacher": "Обанай Игуро",
 		"nickname": "Вернеры топ фама",
-		"money": 14226,
+		"money": 41879,
 		"timers": {
 			"bonus": 1688496220187,
-			"training": 1688410142916,
-			"boss": 1688411767567,
+			"training": 1688655563415,
+			"boss": 1688656983031,
 			"cboss": 0
 		},
 		"lvl": 1,
-		"exp": 3,
+		"exp": 8,
 		"nextExp": 100,
-		"needCall": "Санеми Шинадзугава",
-		"strenght": 2565,
+		"needCall": "Обанай Игуро",
+		"strenght": 7690,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
 			"adm": null
 		},
-		"boss_damage": 2520,
-		"clan": null,
+		"boss_damage": 10173,
+		"clan": 6,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -574,15 +567,15 @@
 		"money": 4683,
 		"timers": {
 			"bonus": 1688497258927,
-			"training": 1688412480898,
+			"training": 1688554505636,
 			"boss": 0,
 			"cboss": 1688412890347
 		},
 		"lvl": 1,
-		"exp": 45,
+		"exp": 50,
 		"nextExp": 100,
-		"needCall": "Кёджуро Ренгоку",
-		"strenght": 3634,
+		"needCall": "Саконджи Урокодаки",
+		"strenght": 3726,
 		"ban_info": {
 			"ban": false,
 			"reason": "",
@@ -591,6 +584,7 @@
 		"boss_damage": 0,
 		"clan": 0,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -618,6 +612,7 @@
 		"boss_damage": 0,
 		"clan": 3,
 		"adm": false,
+		"vip": false,
 		"weapon": null
 	},
 	{
@@ -645,6 +640,175 @@
 		"boss_damage": 0,
 		"clan": null,
 		"adm": false,
+		"vip": false,
 		"weapon": null
+	},
+	{
+		"uid": 24,
+		"id": 788196975,
+		"teacher": "Гию Томиока",
+		"nickname": "Ëричи на минималках",
+		"money": 55945,
+		"timers": {
+			"bonus": 1688713529288,
+			"training": 1688647082696,
+			"boss": 1688663524757,
+			"cboss": 1688663530940
+		},
+		"lvl": 1,
+		"exp": 44,
+		"nextExp": 100,
+		"needCall": "Кёджуро Ренгоку",
+		"strenght": 8550,
+		"ban_info": {
+			"ban": false,
+			"reason": "",
+			"adm": null
+		},
+		"boss_damage": 30282,
+		"clan": 0,
+		"adm": false,
+		"vip": false,
+		"weapon": null
+	},
+	{
+		"uid": 25,
+		"id": 588250419,
+		"teacher": "Муичиро Токито",
+		"nickname": "у тебя во рту челен",
+		"money": 9603,
+		"timers": {
+			"bonus": 1688747038091,
+			"training": 1688564946606,
+			"boss": 0,
+			"cboss": 0
+		},
+		"lvl": 1,
+		"exp": 36,
+		"nextExp": 100,
+		"needCall": "Гию Томиока",
+		"strenght": 960,
+		"ban_info": {
+			"ban": false,
+			"reason": "",
+			"adm": null
+		},
+		"boss_damage": 0,
+		"clan": null,
+		"adm": false,
+		"vip": false,
+		"weapon": null
+	},
+	{
+		"uid": 26,
+		"id": 754008559,
+		"teacher": "Мицури Канроджи",
+		"nickname": "  Kio",
+		"money": 0,
+		"timers": {
+			"bonus": 0,
+			"training": 1688559676173,
+			"boss": 0,
+			"cboss": 0
+		},
+		"lvl": 1,
+		"exp": 37,
+		"nextExp": 100,
+		"needCall": "Гёмей Химеджима",
+		"strenght": 798,
+		"ban_info": {
+			"ban": false,
+			"reason": "",
+			"adm": null
+		},
+		"boss_damage": 802,
+		"clan": null,
+		"adm": false,
+		"vip": false,
+		"weapon": null
+	},
+	{
+		"uid": 27,
+		"id": 480170653,
+		"teacher": "Гёмей Химеджима",
+		"nickname": "Митя Никулин",
+		"money": 3696,
+		"timers": {
+			"bonus": 1688651076839,
+			"training": 1688564797355,
+			"boss": 0,
+			"cboss": 0
+		},
+		"lvl": 1,
+		"exp": 1,
+		"nextExp": 100,
+		"needCall": "Шинобу Кочо",
+		"strenght": 7,
+		"ban_info": {
+			"ban": false,
+			"reason": "",
+			"adm": null
+		},
+		"boss_damage": 0,
+		"clan": null,
+		"adm": false,
+		"vip": false,
+		"weapon": null
+	},
+	{
+		"uid": 28,
+		"id": 548407308,
+		"weapon": null,
+		"teacher": "Обанай Игуро",
+		"nickname": " 📎ЕБЫРЬ📎",
+		"money": 5314,
+		"timers": {
+			"bonus": 0,
+			"training": 1688661716035,
+			"boss": 1688665151178,
+			"cboss": 1688666374186
+		},
+		"lvl": 1,
+		"exp": 86,
+		"nextExp": 100,
+		"needCall": "Мицури Канроджи",
+		"strenght": 5425,
+		"ban_info": {
+			"ban": false,
+			"reason": "",
+			"adm": null
+		},
+		"boss_damage": -75687,
+		"clan": 6,
+		"adm": false,
+		"vip": false
+	},
+	{
+		"uid": 28,
+		"id": 552376049,
+		"weapon": null,
+		"teacher": "Кёджуро Ренгоку",
+		"nickname": "Ренгоку Умер ало дауны",
+		"money": 1736,
+		"timers": {
+			"bonus": 1688748252298,
+			"training": 1688649702357,
+			"boss": 1688665928477,
+			"cboss": 0
+		},
+		"lvl": 1,
+		"exp": 6,
+		"nextExp": 100,
+		"needCall": "Обанай Игуро",
+		"strenght": 150,
+		"ban_info": {
+			"ban": false,
+			"reason": "",
+			"adm": null
+		},
+		"boss_damage": 150,
+		"clan": null,
+		"adm": false,
+		"vip": false
 	}
 ]

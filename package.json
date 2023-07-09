@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@vk-io/hear": "^1.1.1",
+    "@vkontakte/vk-bridge": "^2.7.2",
+    "axios": "^1.4.0",
+    "canvas": "^2.11.2",
+    "cheerio": "^1.0.0-rc.12",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "fetch": "^1.1.0",
+    "http-raw-request": "^2.0.2",
+    "node-fetch": "^2.6.9",
+    "nodemon": "^3.0.0",
+    "set-interval-async": "^3.0.3",
+    "setuptools": "^0.0.1",
+    "superagent": "^8.0.9",
+    "vk-captchasolver": "^1.0.1",
+    "vk-io": "^4.8.3",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
